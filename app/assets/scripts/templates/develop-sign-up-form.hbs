@@ -1,0 +1,48 @@
+<h2>Developer</h2>
+
+<form class="form-horizontal sign-up">
+  <div class="form-group">
+    <label for="name" class="col-sm-3 control-label">Name</label>
+    <div class="col-sm-9">
+      <input type="email" class="form-control" id="name">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="state" class="col-sm-3 control-label">State</label>
+    <div class="col-sm-9">
+      <select class="form-control" id="state">
+        {{#each this}}
+          <option value="{{value}}">{{label}}</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="github-id" class="col-sm-3 control-label">Github ID</label>
+    <div class="col-sm-9">
+      <input type="email" class="form-control" id="github-id">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="program" class="col-sm-3 control-label">What's your name in binary?</label>
+    <div class="col-sm-9">
+      <input type="email" class="form-control" id="program">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="cover-letter" class="col-sm-3 control-label">Cover Letter</label>
+    <div class="col-sm-9">
+      <textarea class="form-control" rows="5" id="cover-letter"></textarea>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-9">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+  </div>
+</form>

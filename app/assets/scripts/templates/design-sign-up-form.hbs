@@ -1,0 +1,48 @@
+<h2>Designer</h2>
+
+<form class="form-horizontal sign-up">
+  <div class="form-group">
+    <label for="name" class="col-sm-3 control-label">Name</label>
+    <div class="col-sm-9">
+      <input type="email" class="form-control" id="name">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="state" class="col-sm-3 control-label">State</label>
+    <div class="col-sm-9">
+      <select class="form-control" id="state">
+        {{#each this}}
+          <option value="{{value}}">{{label}}</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="behance-id" class="col-sm-3 control-label">Behance ID</label>
+    <div class="col-sm-9">
+      <input type="email" class="form-control" id="behance-id">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="wireframing" class="col-sm-3 control-label">What's your favorite wireframing tool?</label>
+    <div class="col-sm-9">
+      <input type="email" class="form-control" id="wireframing">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="cover-letter" class="col-sm-3 control-label">Cover Letter</label>
+    <div class="col-sm-9">
+      <textarea class="form-control" rows="5" id="cover-letter"></textarea>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-9">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+  </div>
+</form>
