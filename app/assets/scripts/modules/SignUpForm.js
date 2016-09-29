@@ -22,7 +22,7 @@ class SingUpForm {
       this._handleJobTitleSelection(jobTitle);
       this._updateUrl(jobTitle);
 
-    }).bind(this);
+    });
   }
 
   _handleJobTitleSelection(jobTitle) {
