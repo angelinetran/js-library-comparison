@@ -10,13 +10,9 @@ class App extends Component {
     super(props);
 
     this.state = {
-      jobTitle: '',
-      stateData: []
+      jobTitle: this.props.location.query.jobTitle || '',
+      stateData: StateData || ''
     }
-  }
-
-  componentDidMount() {
-    this.setState({stateData: StateData});
   }
 
   _handleJobTitleSelection() {
@@ -30,14 +26,14 @@ class App extends Component {
         form = <DesignSignUpForm stateData={this.state.stateData} />
         break;
       default:
-        console.log( 'none selected');
+        console.log( 'no jobTitle selected');
     }
 
     return form;
   }
 
   _updateUrl(jobTitle) {
-    browserHistory.push('/react.html?' + jobTitle);
+    browserHistory.push('/react.html?jobTitle=' + jobTitle);
   }
 
   handleButtonClick(jobTitle, e) {
