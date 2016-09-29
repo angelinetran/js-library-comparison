@@ -3,14 +3,18 @@ import StateData from '../json/states.json';
 import DesignFormTemplate from '../templates/design-sign-up-form.hbs';
 import DevelopFormTemplate from '../templates/develop-sign-up-form.hbs';
 import Handlebars from 'handlebars';
-import createHistory from 'history/createBrowserHistory'
+import createHistory from 'history/createBrowserHistory';
+import URI from 'urijs';
 
 class SingUpForm {
   constructor () {
     this.$signUpFormButton = $('[data-sign-up-form]');
     this.$signUpformContainer = $('[data-sign-up-form-container]');
 
-    this.history = createHistory()
+    this.history = createHistory();
+
+    var url = new URI(window.location.href);
+    this._handleJobTitleSelection(url.search(true).jobTitle)
 
     this._clickJobTitle();
   }
@@ -22,7 +26,7 @@ class SingUpForm {
       this._handleJobTitleSelection(jobTitle);
       this._updateUrl(jobTitle);
 
-    }).bind(this);
+    });
   }
 
   _handleJobTitleSelection(jobTitle) {
@@ -41,7 +45,7 @@ class SingUpForm {
   }
 
   _updateUrl(jobTitle) {
-    this.history.push('/index.html?title=' + jobTitle);
+    this.history.push('/index.html?jobTitle=' + jobTitle);
   }
 
   _showDeveloperForm() {
